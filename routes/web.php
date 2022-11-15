@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Gslc;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GslcController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,24 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/gslc', function () {
-    $gslc = [
-
-        [
-            "name" => "2440028754 - Roger Van Soegihjanto",
-            "body" => "I'm the real one, my uniqueness is I have this email",
-            "message" => "roger.soegihjanto@binus.ac.id"
-        ],
-        [
-            "name" => "Soegihjanto earth 866",
-            "body" => "I'm van but I like to hide my profile with soegihjanto's profile he looks like this",
-            "message" => "I'm sorry I think in this array can't show an image so yeah sorry"
+Route::get('/gslc', [GslcController::class, 'index']);
 
 
-        ]
-        ];
-    return view('gslc', [
-
-        "gslc" => $gslc
-    ]);
-});
+Route::get('/gslc/{slug}', [GslcController::class, 'show']);

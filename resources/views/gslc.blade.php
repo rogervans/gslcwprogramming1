@@ -11,8 +11,10 @@
 
         <article class="mb-5">
 
-            <h2>Nama: {{ $gsl["name"] }}</h2>
-            <h5>Deskripsi: {{ $gsl["body"] }}</h5>
+            <h2>
+                <a href="/gslc/{{ $gsl["slug"] }}"> {{ $gsl["name"] }}</a>
+            </h2>
+            <h5>Description: {{ $gsl["body"] }}</h5>
 
             <h3>{{ $gsl["message"] }}</h3>
         </article>
